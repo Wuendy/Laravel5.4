@@ -1,0 +1,39 @@
+tr th{
+	font-weight:bold;
+    }
+tr th, tr td{
+	padding:5px;
+}
+th{
+    border: 8px solid #fff;
+}
+td{
+	border: 8px solid #fff;
+}
+.c1{
+	background:#FF99FF;
+}
+.c2{
+	background:#CC99FF;
+}
+.c3{
+	background:#9999FF;
+}
+.c4{
+	background:#99CCFF;
+}
+.c5{
+	background:#99FF99;
+}
+.c6{
+	background:#FF9999;
+}
+.c7{
+	background:#FFCC99;
+}
+.c8{
+	background:#99FFFF;
+}
+.c9{
+	background:#FF99CC;
+}
