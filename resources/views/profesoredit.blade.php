@@ -47,6 +47,15 @@
             <input class="input100" type="email" name="email" placeholder="Email" value="{{$profesor->email}}" >
             <span class="focus-input100" data-placeholder=""></span>
           </div>
+          <select class="input100" name="id_mat" >
+           <option value="{{$profesor->id_mat}}">{{$profesor->materias->materia}}  </option>
+  
+              @foreach($materia as $key)
+           <option value="{{$key->id}}"> {{$key->materia}}  </option>
+@endforeach 
+               
+          
+           </select>
           
  <input type="hidden" name="_token" value="{{ csrf_token() }}">
   

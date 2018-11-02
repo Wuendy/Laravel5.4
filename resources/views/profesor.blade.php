@@ -51,8 +51,8 @@
            <select class="input100" name="id_mat" >
            <option value="1"> Materia  </option>
   
-              @foreach($materia as $materia)
-           <option value="{{$materia->id}}"> {{$materia->materia}}  </option>
+              @foreach($materia as $key)
+           <option value="{{$key->id}}"> {{$key->materia}}  </option>
 @endforeach 
                
           

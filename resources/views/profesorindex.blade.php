@@ -11,7 +11,8 @@
             
             
 
-            <table style="text-align:Justify;width:100%;">
+            <table style="text-align:Justify;width:100%;" >
+
              <tr>
              
            		<th class="c6">Id</th>
@@ -37,14 +38,41 @@
                 <td class="c4">{{$profesor->tlf}}</td>
                 <td class="c5">{{$profesor->email}}</td>
                 <td class="c5">{{$profesor->materias->materia}}</td>
+
                <td ><a href="{{action('ProfesorController@edit', $profesor->id)}}" ><img src="{{ asset('css/images/writing.svg')}}" style="height:30px;width:30px;"></a></td>
                 <td >
-                  <form action="{{action('ProfesorController@destroy', $profesor->id)}}" method="post">
-                   {{csrf_field()}}
-                   <input name="_method" type="hidden" value="DELETE">
- 
-                   <button style="background-color:#fff;border:none;"type="submit"><img src="{{ asset('css/images/delete.svg')}}" style="height:28px;width:28px;"></button>
-                 </form></td>
+<button style="cursor:pointer;background-color:white;border:none;" data-toggle="modal" data-target="#{{$profesor->id}}"><img src="{{ asset('css/images/delete.svg')}}" style="height:28px;width:28px;"></button>
+                  
+
+ <div class="modal modal-danger fade" id="{{$profesor->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{route('profesor.destroy', $profesor->id)}}" method="post">
+   
+         
+          {{csrf_field()}}
+        <div class="modal-body">
+        <p class="text-center">
+          ¿Estas seguro que deseas eliminar este registro?
+        </p>
+            <input name="_method" type="hidden" value="DELETE">
+            
+
+        </div>
+        <div class="modal-footer">
+         
+          <button style="background-color:#FF99CC;border:solid 2px #FF99CC;color:white;"type="submit" class="btn btn-warning">Si&nbsp;</button>
+          <button style="background-color:#9999FF;border:solid 1px #9999FF;color:white;" type="button" class="btn btn-success" data-dismiss="modal">No</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
+                 </td>
 
                  <td colspan="2" scope="colgroup"><a href="{{ route('profesor.create') }}" ><img src="{{ asset('css/images/plus.svg')}}" style="height:30px;width:30px;"></a> </td>
                </tr>
@@ -60,5 +88,8 @@
         
 
  </body>
+
  </html>
+
 @endsection
+
