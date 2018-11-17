@@ -60,6 +60,11 @@
                         </a>
                             </li>
                             <li class="nav-item cool">
+                                <a class="nav-link" href="{{ route('shop.index') }}">Shop
+                            
+                        </a>
+                            </li>
+                            <li class="nav-item cool">
                                 <a class="nav-link" href="{{ url('profesor') }}">Profesores</a>
                             </li>
                            
@@ -73,7 +78,7 @@
                             {{ Auth::user()->name }}&nbsp;&nbsp;&nbsp;
                         </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item">
+                                    <a class="dropdown-item" href="{{url('profile')}}">
                                         Perfil
                                     </a>
                              
@@ -86,7 +91,13 @@
 
                                   
                             </li>
+ <li class="nav-item cool">
+                                <a class="nav-link" href="{{ route('cart.index') }}">Cart 
+                                @if(Cart::instance('default')->count()>0)
+    ({{Cart::instance('default')->count()}})
 
+@endif</a>
+                            </li>
                             <!-- /search -->
 
                         </ul>

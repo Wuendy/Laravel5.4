@@ -76,7 +76,7 @@
                          <img style="height:25px;width:25px;" src="{{url('/css/images/sakura.svg')}}"> {{ Auth::user()->name }}
                         </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{url('profile')}}">
                                         Perfil
                                     </a>
                                
