@@ -28,6 +28,9 @@
     24 => 'App\\Providers\\AuthServiceProvider',
     25 => 'App\\Providers\\EventServiceProvider',
     26 => 'App\\Providers\\RouteServiceProvider',
+    27 => 'Intervention\\Image\\ImageServiceProvider',
+    28 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
+    29 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
   ),
   'eager' => 
   array (
@@ -45,6 +48,9 @@
     11 => 'App\\Providers\\AuthServiceProvider',
     12 => 'App\\Providers\\EventServiceProvider',
     13 => 'App\\Providers\\RouteServiceProvider',
+    14 => 'Intervention\\Image\\ImageServiceProvider',
+    15 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
+    16 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
   ),
   'deferred' => 
   array (

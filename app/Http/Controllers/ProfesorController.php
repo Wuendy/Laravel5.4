@@ -8,6 +8,8 @@ use App\Profesor;
 use Illuminate\Http\Request;
 use App\Http\Requests\Profesorrequest;
 use Illuminate\Support\Facades\Input;
+use Image;
+
 
 
 class ProfesorController extends Controller
@@ -97,6 +99,7 @@ class ProfesorController extends Controller
         return redirect()->route('profesor.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
+
     
 
     /**
@@ -112,5 +115,35 @@ class ProfesorController extends Controller
     $profesor->delete();
         return back();
     }
+
+
+
+public function profile(){
+        $profesor=Profesor::all();
+        return view('profil',compact('profesor')); 
+    }
+
+
+
+
+
+
+    public function proed($id){
+        $profesor=Profesor::find($id);
+        return view('profiledit',compact('profesor')); 
+    }
+   public function update_avatar(Request $request,$id){
+        if($request->hasFile('avatar')){
+            $avatar=$request->file('avatar');
+            $filename=time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,350)->save( public_path('/uploads/avatars/' . $filename));
+            $profesor=Profesor::find($id);
+            $profesor->avatar=$filename;
+            $profesor->save();
+        }
+       $profesor=Profesor::all();
+        return view('profil',compact('profesor')); 
+    }
+
     }
 
